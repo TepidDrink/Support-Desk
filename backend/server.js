@@ -13,11 +13,13 @@ app.use(express.static('public'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
-app.use('/api/users', require('./routes/userRoutes'))
-
 app.get('/', (req, res) => {
   res.status(200).json({ message: 'Welcome to the Support Desk API' })
 })
 
+app.use('/api/users', require('./routes/userRoutes'))
+app.use('/api/tickets', require('./routes/ticketRoutes'))
+
 app.use(errorHandler)
+
 app.listen(PORT, () => console.log(`Server started on port ${ PORT }`))
