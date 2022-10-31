@@ -24,7 +24,7 @@ const getTicket = asyncHandler(async (req, res) => {
 
   if (!ticket) {
     res.status(404)
-    throw new Error('TicketItem not found')
+    throw new Error('Ticket not found')
   }
 
   if (ticket.user.toString() !== req.user.id.toString()) {
