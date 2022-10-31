@@ -24,7 +24,7 @@ const getTicket = asyncHandler(async (req, res) => {
 
   if (!ticket) {
     res.status(404)
-    throw new Error('Ticket not found')
+    throw new Error('TicketItem not found')
   }
 
   if (ticket.user.toString() !== req.user.id.toString()) {
@@ -45,7 +45,7 @@ const updateTicket = asyncHandler(async (req, res) => {
 
   if (!ticket) {
     res.status(404)
-    throw new Error('Ticket not found')
+    throw new Error('TicketItem not found')
   }
 
   if (ticket.user.toString() !== req.user.id.toString()) {
@@ -71,7 +71,7 @@ const deleteTicket = asyncHandler(async (req, res) => {
 
   if (!ticket) {
     res.status(404)
-    throw new Error('Ticket not found')
+    throw new Error('TicketItem not found')
   }
 
   if (ticket.user.toString() !== req.user.id.toString()) {
@@ -101,7 +101,7 @@ const createTicket = asyncHandler(async (req, res) => {
     product, description, user: req.user._id, status: 'new',
   })
 
-  res.status(201).json({ message: 'Ticket created', payload: ticket })
+  res.status(201).json({ message: 'TicketItem created', payload: ticket })
 })
 
 module.exports = {
