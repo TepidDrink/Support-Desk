@@ -45,7 +45,7 @@ function Login() {
     dispatch(login(userData))
       .unwrap()
       .then((user) => {
-        toast.success(`Logged in as ${user.name}`)
+        toast.success(`Logged in as ${ user.name }`)
         navigate('/')
       })
       .catch(toast.error)

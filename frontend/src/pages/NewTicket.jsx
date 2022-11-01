@@ -77,7 +77,7 @@ function NewTicket() {
                   onChange={ (e) => setProduct(e.target.value) }>
             {
               productList.map((option) => (
-                <option value={ option } key={option}>{ option }</option>
+                <option value={ option } key={ option }>{ option }</option>
               ))
             }
           </select>

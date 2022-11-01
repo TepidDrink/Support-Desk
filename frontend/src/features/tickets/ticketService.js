@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { createConfig } from '../../utils'
 
 const API_URL = '/api/tickets'
 
@@ -47,13 +48,6 @@ const deleteTicket = async (ticketId, token) => {
   return response.data
 }
 
-function createConfig(token) {
-  return {
-    headers: {
-      authorization: `Bearer ${ token }`,
-    },
-  }
-}
 
 const ticketService = {
   createTicket,
